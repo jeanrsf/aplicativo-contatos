@@ -1,0 +1,53 @@
+.modal {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    z-index: 2;
+    -webkit-transition: all 0.5s 0.5s ease-in-out;
+    transition: all 0.5s 0.5s ease-in-out;
+    background-color: rgba(0, 0, 0, 0.6);
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.modal h1 {
+    margin-top: 33px;
+}
+
+.adicionar {
+    width: 364px;
+    height: 50px;
+    background: #04C45C;
+    border-radius: 8px;
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 19px;
+    text-align: center;
+    color: #FFF7F7;
+    margin-top: 72px;
+}
+
+.limpar {
+    background: rgba(251, 6, 21, 0.65);
+    border-radius: 8px;
+    width: 364px;
+    height: 50px;
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 19px;
+    text-align: center;
+    color: #FFF7F7;
+    margin-top: 8px;
+}
+
+.icone-fechar {
+    position: absolute;
+    right: 12px;
+    top: 12px;
+}

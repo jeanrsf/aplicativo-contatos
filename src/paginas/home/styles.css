@@ -1,0 +1,58 @@
+.header {
+    width: 1440px;
+    height: 70px;
+    background: #134563;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.header h1 {
+    width: 128px;
+    height: 22px;
+    font-weight: bold;
+    font-size: 24px;
+    line-height: 27px;
+    text-align: center;
+    color: #FFFFFF;
+}
+
+.btn-add {
+    margin-top: 104px;
+    margin-bottom: 32px;
+    width: 235px;
+    height: 50px;
+    background: #04C45C;
+    border-radius: 8px;
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 19px;
+    text-align: center;
+    color: #FFFFFF;
+}
+
+table {
+    width: 955px;
+}
+
+.cabecalho-tabela {
+    width: 956px;
+    height: 46px;
+    background: #F4F0F0;
+    font-weight: bold;
+    font-size: 12px;
+    line-height: 14px;
+    color: #1C1414;
+}
+
+tr {
+    text-align: center;
+}
+
+.icone-editar {
+    cursor: pointer;
+}
+
+.icone-excluir {
+    cursor: pointer;
+}

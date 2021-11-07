@@ -1,0 +1,26 @@
+.card-modal {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 476px;
+    height: 563px;
+    background: #FFFDFD;
+    border-radius: 8px;
+    position: relative;
+}
+
+.formulario-modal {
+    display: flex;
+    flex-direction: column;
+}
+
+.formulario-modal input {
+    width: 364px;
+    height: 50px;
+}
+
+.formulario-modal label {
+    font-size: 16px;
+    line-height: 19px;
+    color: #968B8B;
+}
