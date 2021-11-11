@@ -42,18 +42,34 @@ export default function Login() {
     }
 
     return (
-        <div className="card" >
-            <img className="imagem-login" src={imagemLogin} alt="" />
-            <div className="card-login">
-                <h3>Bem vindo</h3>
-                <h1>Faça o login com sua conta</h1>
-                <form className="formulario" onSubmit={handleLogin}>
-                    <input id="email" name="email" type="text" value={formulario.email} onChange={handleChange} placeholder="E-mail" />
-                    <input id="senha" name="senha" type="password" value={formulario.senha} onChange={handleChange} placeholder="Senha" />
-                    <button type="submit">LOGIN</button>
-                    <span className="direcionamento">Não tem cadastro? Clique aqui!</span>
-                </form>
-            </div>
+      <div className='card'>
+        <img className='imagem-login' src={imagemLogin} alt='' />
+        <div className='card-login'>
+          <h3>Bem vindo</h3>
+          <h1>Faça o login com sua conta</h1>
+          <form className='formulario' onSubmit={handleLogin}>
+            <input
+              id='email'
+              name='email'
+              type='text'
+              value={formulario.email}
+              onChange={handleChange}
+              placeholder='E-mail'
+            />
+            <input
+              id='senha'
+              name='senha'
+              type='password'
+              value={formulario.senha}
+              onChange={handleChange}
+              placeholder='Senha'
+            />
+            <button type='submit'>LOGIN</button>
+            <span className='direcionamento'>
+              <a href='/cadastro'>Não tem cadastro? Clique aqui!</a>
+            </span>
+          </form>
         </div>
-    )
+      </div>
+    );
 }

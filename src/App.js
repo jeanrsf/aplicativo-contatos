@@ -8,7 +8,6 @@ import {
 import { AutenticacaoProvedor } from './contextos/AutenticacaoContexto';
 import { DadosProvedor } from './contextos/DadosUsuarios'
 
-
 function App() {
 
   return (
