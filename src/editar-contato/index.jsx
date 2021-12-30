@@ -8,24 +8,26 @@ export function EditarContato({ contato }) {
     const [formulario, setFormulario] = useState({ nome: contato.nome || "", email: contato.email || "", telefone: contato.telefone || '' })
     const { token } = useDadosAutenticacao()
     const { modalEditar, setModalEditar, carregarUsuarios } = useDadosUsuarios()
+
     async function handleSubmit(event) {
-        event.preventDefault()
-        const body = {
-            nome: formulario.nome,
-            email: formulario.email,
-            telefone: formulario.telefone
-        }
-        const response = await fetch(`https://cubos-api-contacts.herokuapp.com/contatos/${contato.id}`, {
-            method: 'PUT',
-            headers: {
-                'Content-Type': 'application/json',
-                'Authorization': `Bearer ${token}`
-            },
-            body: JSON.stringify(body)
-        })
-        const data = await response.json()
-        carregarUsuarios()
-        setModalEditar(false)
+      event.preventDefault();
+
+      const body = {
+        nome: formulario.nome,
+        email: formulario.email,
+        telefone: formulario.telefone,
+      };
+      const response = await fetch(`https://cubos-api-contacts.herokuapp.com/contatos/${contato.id}`, {
+        method: "PUT",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${token}`,
+        },
+        body: JSON.stringify(body),
+      });
+      const data = await response.json();
+      carregarUsuarios();
+      setModalEditar(false);
     }
 
     function handleChange(event) {

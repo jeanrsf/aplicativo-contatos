@@ -17,6 +17,7 @@
 .formulario-modal input {
     width: 364px;
     height: 50px;
+    padding: 0 8px;
 }
 
 .formulario-modal label {

@@ -12,16 +12,18 @@ export function Modal({ botaoOnClick, segundoBotaoOnclick, textoBotao, textoSegu
     }
 
     return (
-        <div className="modal">
-            <div className={className}>
-                <img className="icone-fechar" src={iconeFechar}
-                    onClick={fecharModal}
-                    alt="" />
-                <h1>{titulo} </h1>
-                {children}
-                <button type="submit" onClick={botaoOnClick} className="adicionar">{textoBotao}</button>
-                <button type="reset" onClick={segundoBotaoOnclick} className="limpar">{textoSegundoBotao}</button>
-            </div>
+      <div className='modal'>
+        <div className={className}>
+          <img className='icone-fechar' src={iconeFechar} onClick={fecharModal} alt='Botão de fechar' />
+          <h1>{titulo} </h1>
+          {children}
+          <button type='submit' onClick={botaoOnClick} className='adicionar'>
+            {textoBotao}
+          </button>
+          <button type='reset' onClick={segundoBotaoOnclick} className='limpar'>
+            {textoSegundoBotao}
+          </button>
         </div>
-    )
+      </div>
+    );
 }

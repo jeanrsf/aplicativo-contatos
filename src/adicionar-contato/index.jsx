@@ -6,29 +6,37 @@ import "./styles.css"
 
 export function AdicionarContato() {
     const [formulario, setFormulario] = useState({ nome: '', email: '', telefone: '' })
-    const { modalAddContato, setModalAddContato, carregarUsuarios } = useDadosUsuarios()
-    const { token } = useDadosAutenticacao()
+    const { modalAddContato, setModalAddContato, carregarUsuarios, setErro } = useDadosUsuarios();
+    const { token } = useDadosAutenticacao();
 
     async function handleSubmit(event) {
-        event.preventDefault()
-        const body = {
-            nome: formulario.nome,
-            email: formulario.email,
-            telefone: formulario.telefone
-        }
+      event.preventDefault();
 
-        const response = await fetch(`https://cubos-api-contacts.herokuapp.com/contatos`, {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-                'Authorization': `Bearer ${token}`
-            },
-            body: JSON.stringify(body)
-        })
-        const data = await response.json()
-        carregarUsuarios()
-        setModalAddContato(false)
-        limparCampos()
+      const body = {
+        nome: formulario.nome,
+        email: formulario.email,
+        telefone: formulario.telefone,
+      };
+
+      const response = await fetch(`https://cubos-api-contacts.herokuapp.com/contatos`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${token}`,
+        },
+        body: JSON.stringify(body),
+      });
+
+      if (response.ok) {
+        const data = await response.json();
+        carregarUsuarios();
+        setModalAddContato(false);
+        limparCampos();
+        setErro(false);
+      } else {
+        setErro(true);
+        setModalAddContato(false);
+      }
     }
     function handleChange(event) {
         setFormulario((estadoAnterior) => {

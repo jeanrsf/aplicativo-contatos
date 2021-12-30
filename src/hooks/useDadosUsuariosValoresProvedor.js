@@ -7,19 +7,19 @@ export const useDadosUsuariosValoresProvedor = () => {
     const [modalAddContato, setModalAddContato] = useState(false)
     const [modalExcluir, setModalExcluir] = useState(false)
     const [modalEditar, setModalEditar] = useState(false)
+    const [erro, setErro]= useState(false)
     const { token } = useDadosAutenticacao()
 
     async function carregarUsuarios() {
-
         const response = await fetch(`https://cubos-api-contacts.herokuapp.com/contatos`, {
             method: 'GET',
             headers: {
                 'Content-Type': 'application/json',
-                'Authorization': `Bearer ${token}`
+                Authorization: `Bearer ${token}`,
             },
-        })
-        const data = await response.json()
-        setListaDeContatos(data)
+        });
+        const data = await response.json();
+        setListaDeContatos(data);
     }
 
     return {
@@ -30,7 +30,9 @@ export const useDadosUsuariosValoresProvedor = () => {
         modalEditar,
         setModalEditar,
         carregarUsuarios,
-        listaDeContatos
+        listaDeContatos,
+        erro,
+        setErro
 
     }
 }

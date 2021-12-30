@@ -1,51 +1,48 @@
 import './styles.css';
 import { useState } from 'react';
 import { useDadosAutenticacao } from '../../hooks/useDadosAutenticacao';
-import { useHistory } from 'react-router-dom'
-import imagemLogin from "../../assets/Imagem_Esquerda_2.png"
+import { useHistory } from 'react-router-dom';
+import imagemLogin from '../../assets/Imagem_Esquerda_2.png';
+import { logarUsuario } from '../../servicos/usuariosServicos';
 
-
+const estadoInicial = { email: '', senha: '' };
 
 export default function Login() {
-    const [formulario, setFormulario] = useState({ email: '', senha: '' })
-    const { token, setToken } = useDadosAutenticacao()
-    const history = useHistory()
+  const [formulario, setFormulario] = useState(estadoInicial);
+  const { setToken } = useDadosAutenticacao();
+  const history = useHistory();
 
-    async function handleLogin(event) {
-        event.preventDefault()
+  async function handleLogin(event) {
+    event.preventDefault();
 
-        if (!formulario.email || !formulario.senha) {
-            return
-        }
-
-        const body = {
-            email: formulario.email,
-            senha: formulario.senha
-        }
-        const response = await fetch(`https://cubos-api-contacts.herokuapp.com/login`, {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify(body)
-        })
-        const data = await response.json()
-        setToken(data.token)
-        console.log(token);
-        history.push('/home')
-
-    }
-    function handleChange(event) {
-        setFormulario((estadoAnterior) => {
-            return { ...estadoAnterior, [event.target.name]: event.target.value }
-        })
+    if (!formulario.email || !formulario.senha) {
+      return;
     }
 
-    return (
-      <div className='card'>
-        <img className='imagem-login' src={imagemLogin} alt='' />
-        <div className='card-login'>
-          <h3>Bem vindo</h3>
+    const body = {
+      email: formulario.email,
+      senha: formulario.senha,
+    };
+
+    const resposta = await logarUsuario(body);
+    if (!resposta.token) {
+      return;
+    }
+    setToken(resposta.token);
+    history.push('/home');
+  }
+  function handleChange(event) {
+    setFormulario((estadoAnterior) => {
+      return { ...estadoAnterior, [event.target.name]: event.target.value };
+    });
+  }
+
+  return (
+    <div className='card'>
+      <img className='imagem-login' src={imagemLogin} alt='Mão feminina segurando um celular' />
+      <div className='card-login'>
+        <div className='card-login-conteudo'>
+          <span>Bem vindo</span>
           <h1>Faça o login com sua conta</h1>
           <form className='formulario' onSubmit={handleLogin}>
             <input
@@ -64,12 +61,13 @@ export default function Login() {
               onChange={handleChange}
               placeholder='Senha'
             />
-            <button type='submit'>LOGIN</button>
-            <span className='direcionamento'>
-              <a href='/cadastro'>Não tem cadastro? Clique aqui!</a>
-            </span>
+            <button type='submit'>Login</button>
+            <a className='direcionamento' href='/cadastro'>
+              Não tem cadastro? Clique aqui!
+            </a>
           </form>
         </div>
       </div>
-    );
+    </div>
+  );
 }
