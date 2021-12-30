@@ -1,6 +1,6 @@
 # CRUD de contatos 
 
-Esse porjeto simula uma agenda de contatos, que irá permitir adicionar, editar, excluir e listar os contatos.
+Esse projeto simula uma agenda de contatos, que irá permitir adicionar, editar, excluir e listar os contatos.
 
 ## Tecnologias utilizadas
 
@@ -25,24 +25,24 @@ Esse porjeto simula uma agenda de contatos, que irá permitir adicionar, editar,
 
 ### Autenticação
 
-TODO:Adicionar uma descrição da funcionalidade de autenticação e uma imagem da página de autenticação
+TODO: Adicionar uma descrição da funcionalidade de autenticação e uma imagem da página de autenticação
 
 ### Cadastro de usuario
 
-TODO:Adicionar uma descrição da funcionalidade de cadastro de usuario e uma imagem da página de cadastro de usuario
+TODO: Adicionar uma descrição da funcionalidade de cadastro de usuario e uma imagem da página de cadastro de usuario
 
 ### Lista de contatos
 
-TODO:Adicionar uma descrição da funcionalidade de lista de contatos e uma imagem da página de lista de contatos
+TODO: Adicionar uma descrição da funcionalidade de lista de contatos e uma imagem da página de lista de contatos
 
 ### Cadastro de contato
 
-TODO:Adicionar uma descrição da funcionalidade de cadastro de contato e uma imagem da página de cadastro de contato
+TODO: Adicionar uma descrição da funcionalidade de cadastro de contato e uma imagem da página de cadastro de contato
 
 ### Edição de contato
 
-TODO:Adicionar uma descrição da funcionalidade de edição de contato e uma imagem da página de edição de contato
+TODO: Adicionar uma descrição da funcionalidade de edição de contato e uma imagem da página de edição de contato
 
 ### Remoção de contato
 
-TODO:Adicionar uma descrição da funcionalidade de remoção de contato e uma imagem da página de remoção de contato
+TODO: Adicionar uma descrição da funcionalidade de remoção de contato e uma imagem da página de remoção de contato
